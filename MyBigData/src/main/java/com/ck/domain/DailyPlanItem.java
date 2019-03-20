@@ -3,7 +3,6 @@ package com.ck.domain;
 import java.util.Date;
 
 import com.ck.domain.base.BaseModel;
-import com.ck.enums.FinishTypeEnum;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -19,7 +18,11 @@ public class DailyPlanItem extends BaseModel{
 	
 	private Date planTime;
 	
+	private String planTimeStr;
+	
 	private Date finishTime;
+	
+	private String finishTimeStr;
 	
 	private Integer finishType;
 	

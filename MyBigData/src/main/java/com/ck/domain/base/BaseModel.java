@@ -10,6 +10,8 @@ public class BaseModel {
 	
 	private Date createDate;
 	
+	private String createDateStr;
+	
 	private String createBy;
 	
 	private Date lastModifiedDate;

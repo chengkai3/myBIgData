@@ -42,17 +42,12 @@
 				</div>
 			</el-header>
 		  	<el-container v-loading='tableLoading'>
-			    <el-table :data="planData" show-overflow-tooltip="true" stripe height="450" style="width: 100%">
-			      	<el-table-column type="expand">
-			      		<template slot-scope="props">
-							<label>备注:&nbsp&nbsp</label><span>{{props.row.finishDescr}}</span>
-			      		</template>
-				    </el-table-column>
-			      	<el-table-column prop="createDate" label="日期" width="100"></el-table-column>
-			     	<el-table-column prop="itemContent" label="内容" width="300"></el-table-column>
-			      	<el-table-column prop="planTime" label="计划时间" width="170"></el-table-column>
-			      	<el-table-column prop="finishTime" label="完成时间" width="170"></el-table-column>
-			      	<el-table-column prop="finishType" label="完成情况" :formatter="formatFinishState"></el-table-column>
+			    <el-table size="medium" :data="planData" stripe height="450" style="width: 100%">
+			      	<el-table-column prop="createDateStr" label="创建日期" width="160"></el-table-column>
+			     	<el-table-column prop="itemContent" label="内容" show-overflow-tooltip></el-table-column>
+			      	<el-table-column prop="planTimeStr" label="计划时间" width="160"></el-table-column>
+			      	<el-table-column prop="finishTimeStr" label="完成时间" width="160"></el-table-column>
+			      	<el-table-column prop="finishType" label="完成情况" :formatter="formatFinishType"></el-table-column>
 			    	<el-table-column label="操作">
     				</el-table-column>
 			    </el-table>

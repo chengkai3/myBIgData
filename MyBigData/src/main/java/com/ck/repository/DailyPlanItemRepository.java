@@ -56,6 +56,15 @@ public class DailyPlanItemRepository extends BaseRepository<DailyPlanItemDao, Da
 		DailyPlanItem m = new DailyPlanItem();
 		if(null!=po) {
 			BeanUtils.copyProperties(po, m);
+			if(m.getCreateDate()!=null) {
+				m.setCreateDateStr(MyDateUtils.formatTime(m.getCreateDate()));
+			}
+			if(m.getPlanTime()!=null) {
+				m.setPlanTimeStr(MyDateUtils.formatTime(m.getPlanTime()));
+			}
+			if(m.getFinishTime()!=null) {
+				m.setFinishTimeStr(MyDateUtils.formatTime(m.getFinishTime()));
+			}
 			return m;
 		}
 		return null;

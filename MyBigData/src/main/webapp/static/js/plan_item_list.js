@@ -37,7 +37,10 @@ var vm = new Vue({
 		this.getPlanItems();
 	},
 	methods:{
-		getPlanItems:function(){
+		formatFinishType(row,column){
+			return this.finishTypes.get(row.finishType+'');
+		},
+		getPlanItems(){
 			var _self = this;
 			this.tableLoading = true;
 			$.ajax({
